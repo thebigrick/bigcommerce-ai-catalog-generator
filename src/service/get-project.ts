@@ -3,7 +3,7 @@ import fs from "node:fs";
 import * as path from "node:path";
 
 const getProject = (projectName: string): IProject => {
-  const projectsPath = path.join(__dirname, "..", "projects");
+  const projectsPath = path.join(__dirname, "..", "..", "projects");
   const projectFile = `${projectsPath}/${projectName}.json`;
 
   if (!fs.existsSync(projectFile)) {
