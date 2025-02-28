@@ -1,0 +1,15 @@
+{
+  "images": {
+    "model": "stabilityai/sdxl",
+    "inferenceSteps": 16,
+    "perProduct": 1,
+    "guidanceScale": 5,
+    "additionalPrompt": "In a white background",
+    "negativePrompt": "Room background"
+  },
+  "storeDescription": "Stylish fashion store for women",
+  "catalog": {
+    "productsCount": 10,
+    "categoriesCount": 5
+  }
+}
