@@ -43,13 +43,7 @@ leverages OpenAI for text content and The Hive AI for product images.
 After installation, you need to build the OpenAI assistant that powers the catalog generation:
 
 ```bash
-npm run assistant:build
-```
-
-This command will return an assistant ID. Add this ID to your `.env.local` file:
-
-```
-OPENAI_ASSISTANT_ID=the_returned_assistant_id
+npm run setup
 ```
 
 ## Usage
