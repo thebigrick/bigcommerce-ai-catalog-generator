@@ -1,9 +1,11 @@
-import { ICategory } from "../../types";
-import bigcommerceClient from "./bigcommerce-client";
+import restClient from "./rest-client";
+import getCategoryTreeId from "./get-category-tree-id";
 
 const getCategories = async (): Promise<any> => {
-  const res = await bigcommerceClient("GET", "/catalog/trees/categories", {
-    "tree_id:in": "1",
+  const threeId = await getCategoryTreeId();
+
+  const res = await restClient("GET", "/catalog/trees/categories", {
+    "tree_id:in": String(threeId),
   });
 
   if (res.errors) {

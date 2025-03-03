@@ -5,6 +5,7 @@ const handleAddCategories = async (
   project: IProject,
   res: ICategory[],
 ): Promise<IActionResponse> => {
+  console.log("add_categories:");
   for (const category of res) {
     console.log(`\t${category.name}`);
   }

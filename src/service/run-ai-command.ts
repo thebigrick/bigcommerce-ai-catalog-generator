@@ -56,7 +56,7 @@ const handleRequiresAction = async (
       tool_outputs: await Promise.all(toolOutputs),
     },
     {
-      pollIntervalMs: 500,
+      pollIntervalMs: 250,
     },
   );
 
@@ -76,8 +76,13 @@ const handleRunStatus = async (
   if (run.status === "completed") {
     const messages = await openai.beta.threads.messages.list(threadId);
 
+    const message = (messages.data[0].content[0] as TextContentBlock).text
+      .value;
+
+    console.log(`< ${message}`);
+
     return {
-      message: (messages.data[0].content[0] as TextContentBlock).text.value,
+      message,
     };
   } else if (run.status === "requires_action") {
     return await handleRequiresAction(project, run, threadId);
@@ -109,7 +114,7 @@ const runAiCommand = async (
       assistant_id: assistantId,
     },
     {
-      pollIntervalMs: 1000,
+      pollIntervalMs: 250,
     },
   );
 

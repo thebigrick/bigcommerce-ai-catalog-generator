@@ -1,15 +1,18 @@
 import { ICategory, IProject } from "../../types";
-import bigcommerceClient from "./bigcommerce-client";
+import restClient from "./rest-client";
+import getCategoryTreeId from "./get-category-tree-id";
 
 const createCategories = async (project: IProject, categories: ICategory[]) => {
+  const treeId = await getCategoryTreeId();
+
   const payload = categories.map((category) => ({
     name: category.name,
     description: category.description,
-    tree_id: 1,
+    tree_id: treeId,
     is_visible: true,
   }));
 
-  const res = await bigcommerceClient(
+  const res = await restClient(
     "POST",
     "/catalog/trees/categories",
     {},

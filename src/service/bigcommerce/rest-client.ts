@@ -1,4 +1,4 @@
-export const bigcommerceClient = async (
+export const restClient = async (
   method: string,
   path: string,
   searchParams: Record<string, string> = {},
@@ -43,10 +43,10 @@ export const bigcommerceClient = async (
   const response = await fetch(fullUrl, fetchConfig);
 
   try {
-    return response.json();
+    return await response.json();
   } catch (error) {
-    return response.text();
+    return await response.text();
   }
 };
 
-export default bigcommerceClient;
+export default restClient;

@@ -19,13 +19,28 @@ const addProducts = (): FunctionTool => ({
                 type: "string",
                 description: "Product SKU",
               },
-              name: {
-                type: "string",
-                description: "Product name",
-              },
-              description: {
-                type: "string",
-                description: "Product description",
+              localizableFields: {
+                type: "array",
+                description: "Localizable fields",
+                items: {
+                  type: "object",
+                  properties: {
+                    locale: {
+                      type: "string",
+                      description: "Locale",
+                    },
+                    name: {
+                      type: "string",
+                      description: "Product name",
+                    },
+                    description: {
+                      type: "string",
+                      description: "Product description",
+                    },
+                  },
+                  additionalProperties: false,
+                  required: ["locale", "name", "description"],
+                },
               },
               category: {
                 type: "string",
@@ -37,7 +52,7 @@ const addProducts = (): FunctionTool => ({
               },
             },
             additionalProperties: false,
-            required: ["sku", "name", "description", "category", "price"],
+            required: ["sku", "localizableFields", "category", "price"],
           },
         },
       },

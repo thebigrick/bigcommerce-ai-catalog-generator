@@ -5,8 +5,7 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "assistant:build": "npx tsx src/scripts/build-assistant.ts",
-    "assistant:update": "npx tsx src/scripts/update-assistant.ts",
+    "setup": "npx tsx src/scripts/setup.ts",
     "catalog:generate": "npx tsx src/scripts/generate-catalog.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +23,8 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "openai": "^4.85.4"
+    "openai": "^4.85.4",
+    "gql.tada": "^1.8.10",
+    "@0no-co/graphql.web": "^1.1.1"
   }
 }

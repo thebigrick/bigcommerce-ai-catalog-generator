@@ -1,5 +1,5 @@
 import getOpenAi from "./get-open-ai";
-import assistantConfig from "../config/assistant-config";
+import getAssistantConfig from "../config/get-assistant-config";
 
 /**
  * Build assistant
@@ -9,7 +9,7 @@ const updateAssistant = async (assistantId: string) => {
 
   const oiAssistant = await openAi.beta.assistants.update(
     assistantId,
-    assistantConfig,
+    getAssistantConfig(),
   );
 
   return oiAssistant.id;

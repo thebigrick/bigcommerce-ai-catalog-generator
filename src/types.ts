@@ -11,10 +11,15 @@ export interface ICategory {
   description: string;
 }
 
-export interface IProduct {
-  sku: string;
+export interface ILocalizableProductFields {
+  locale: string;
   name: string;
   description: string;
+}
+
+export interface IProduct {
+  sku: string;
+  localizableFields: Array<ILocalizableProductFields>;
   price: number;
   category: string;
 }
