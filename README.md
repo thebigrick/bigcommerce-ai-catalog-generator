@@ -3,6 +3,8 @@
 This tool automatically generates and uploads product catalogs to BigCommerce stores using AI content generation. It
 leverages OpenAI for text content and The Hive AI for product images.
 
+**This tool is designed to quickly create small product catalogs for demonstration only purposes.**
+
 ## Features
 
 - Create complete product catalogs with AI-generated descriptions and images
@@ -35,7 +37,10 @@ leverages OpenAI for text content and The Hive AI for product images.
    OPENAI_API_KEY=your_openai_api_key
    BIGCOMMERCE_ACCESS_TOKEN=your_bigcommerce_access_token
    BIGCOMMERCE_STORE_HASH=your_bigcommerce_store_hash
+   BIGCOMMERCE_CHANNEL_ID=your_bigcommerce_channel_id
    THE_HIVE_AI_API_KEY=your_hive_ai_api_key
+   OPENAI_API_KEY=...
+   PRODUCTS_BATCH_SIZE=5
    ```
 
 ## Setup
