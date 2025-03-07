@@ -1,13 +1,11 @@
 {
   "name": "@thebigrick/bigcommerce-ai-catalog-generator",
   "version": "0.1.0",
-  "main": "index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "setup": "npx tsx src/scripts/setup.ts",
-    "catalog:generate": "npx tsx src/scripts/generate-catalog.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "catalog:generate": "npx tsx src/scripts/generate-catalog.ts"
   },
   "author": "Riccardo Tempesta <riccardo.tempesta@bigcommerce.com>",
   "license": "MIT",
